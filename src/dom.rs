@@ -5,19 +5,22 @@ use std::collections::HashMap;
 
 pub type AttrMap = HashMap<String, String>;
 
+#[derive(Debug)]
 pub struct Node {
-    children: Vec<Node>,
-    node_type: NodeType
+    pub children: Vec<Node>,
+    pub node_type: NodeType
 }
 
+#[derive(Debug)]
 pub enum NodeType {
     Text(String),
     Element(ElementData)
 }
 
+#[derive(Debug)]
 pub struct ElementData {
-    tag_name: String,
-    attributes: AttrMap
+    pub tag_name: String,
+    pub attributes: AttrMap
 }
 
 
@@ -42,6 +45,6 @@ pub fn element_node(name: String, attrs: AttrMap, children: Vec<Node>) -> Node {
 
 /* Misc. Helper Funcs */
 
-pub fn pretty_print_nodes() {
-    println!("Nodes!");
+pub fn pretty_print_node(root_node: Node) {
+    println!("{:?}", root_node);
 }

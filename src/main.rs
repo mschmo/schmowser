@@ -2,5 +2,9 @@ mod dom;
 
 
 fn main() {
-    dom::pretty_print_nodes();
+    let node = dom::Node{
+        children: vec![],
+        node_type: dom::NodeType::Text("I am a text node".to_string())
+    };
+    dom::pretty_print_node(node);
 }
