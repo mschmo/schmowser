@@ -1,4 +1,4 @@
-/* DOM node base structures */
+//! DOM node base structures
 
 use std::collections::HashMap;
 
